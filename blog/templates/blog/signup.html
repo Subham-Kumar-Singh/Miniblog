@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %} 
+{% load static %} 
+{% block title %}SignUp{%endblock title %} 
+{% block content %}
+
+<div class="col-sm-10">
+  <h3 class="text-white my-5">SignUp Page</h3>
+</div>
+
+<form action="" method="POST">
+  {% for i in form %}
+  {% csrf_token %}
+    {{i.label_tag}} {{i}} {{i.errors|striptags}} <br><br>
+  {% endfor %}
+  <input type="submit" value="SignUp">
+</form>
+
+{% endblock content %}

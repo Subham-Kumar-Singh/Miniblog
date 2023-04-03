@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %} 
+{% load static %} 
+{% block title %}Login{%endblock title %} 
+{% block content %}
+
+<div class="col-sm-10">
+  <h3 class="text-white my-5">Login Page</h3>
+
+  <form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Login">
+  </form>
+</div>
+
+{% if messages %}
+  {% for i in messages %}
+    {{i}}
+  {% endfor %}
+{% endif %}
+
+{% endblock content %}
